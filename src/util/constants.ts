@@ -1,0 +1,2 @@
+export const SUPER_ADDRESS = "0x4c613a5077982237179732d63670473aCbBFb1A5"
+export const DEFAULT_PROVIDER = "http://localhost:8545"

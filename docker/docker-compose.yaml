@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo:5.0.6
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=G4vmqy
+  backend:
+    build: ../.
+    container_name: app
+    restart: 'no'
+    command:
+      - ls -la
+#      - npm run dev
+    volumes:
+      - ${PWD}/:/etc/bab/
+      - /etc/bab/node_modules
+    ports:
+      - 5000:5000
+    depends_on:
+      - mongodb
